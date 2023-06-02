@@ -1,8 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const route = require('./routes');
-const job = require('./jobs');
+const jobs = require('./jobs');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 
@@ -13,7 +14,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/api/', route);
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
-job.AttendanceUser();
+jobs.AttendanceUser();
 
 module.exports = app;
