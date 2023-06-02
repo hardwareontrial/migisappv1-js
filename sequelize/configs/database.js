@@ -1,3 +1,5 @@
+const mysql = require('mysql2');
+
 module.exports = {
 	// "development": {
 		"databases": {
@@ -12,6 +14,7 @@ module.exports = {
 		      "freezeTableName": true,
 		    },
 				"timezone": "+07:00",
+				"dialectModule": mysql,
 			},
 			"Database2": {
 				"database": process.env.DB_ABSENSI_DATABASE,
@@ -24,6 +27,7 @@ module.exports = {
 		      "freezeTableName": true,
 		    },
 				"timezone": "+07:00",
+				"dialectModule": mysql,
 			},
 			"Database3": {
 				"database": process.env.DB_WEB_DATABASE,
@@ -36,6 +40,7 @@ module.exports = {
 		      "freezeTableName": true,
 		    },
 				"timezone": "+07:00",
+				"dialectModule": mysql,
 			},	
 		}
 	// },
